@@ -245,8 +245,8 @@ a:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  z-index: 9999; /* Ensure it appears above other content */
-  background: rgba(0, 0, 0, 0.457); /* Adjust the background color and opacity as needed */
+  z-index: 9999;
+  background: rgba(26, 20, 0, 0.457);
 }
 
 .loader {
