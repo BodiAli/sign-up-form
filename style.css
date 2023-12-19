@@ -133,20 +133,28 @@ input {
   background-image: radial-gradient(circle, #4c843692, #56832ea2, #60812790, #6a802092, #727e1998);
   padding: 3px 5px 3px 5px;
 }
+.form-row {
+  position: relative;
+}
 
 input:invalid:not(:placeholder-shown) + .validation-phone::after {
   content: "Please enter a valid Phone Number";
   color: rgb(134, 1, 1);
-  font-size: small;
+  font-size: 0.8rem;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
+  top: 60px;
+  position: absolute;
 }
+
 input:invalid:not(:placeholder-shown) + .validation-email::after {
   content: "Please enter a valid email";
   color: rgb(134, 1, 1);
-  font-size: small;
+  font-size: 0.8rem;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
+  top: 60px;
+  position: absolute;
 }
 input:focus {
   outline: 3px solid #b5641d;
@@ -301,5 +309,38 @@ a:active {
   .footerp {
     margin-right: 20px;
     margin-left: 100px;
+  }
+  label {
+    font-size: 0.8rem;
+  }
+  ::placeholder {
+    font-size: 0.6rem;
+  }
+  .passspan,
+  .confirmpassspan {
+    font-size: 0.6rem;
+  }
+  .form-row {
+    position: relative;
+  }
+
+  input:invalid:not(:placeholder-shown) + .validation-phone::after {
+    content: "Please enter a valid Phone Number";
+    color: rgb(134, 1, 1);
+    font-size: 0.6rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 60px;
+    position: absolute;
+  }
+
+  input:invalid:not(:placeholder-shown) + .validation-email::after {
+    content: "Please enter a valid email";
+    color: rgb(134, 1, 1);
+    font-size: 0.6rem;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    top: 60px;
+    position: absolute;
   }
 }
