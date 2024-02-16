@@ -50,7 +50,9 @@ body {
   font-family: "logo";
   color: #dcf9d7;
   letter-spacing: 1px;
-  /* text-decoration: none; */
+}
+.logoname::selection {
+  color: #b5641d;
 }
 .banner::before {
   content: "";
