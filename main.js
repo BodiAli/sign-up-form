@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }, 10);
   }
 
-  video.addEventListener("loadeddata", function () {
+  video.addEventListener("play", function () {
     fadeOutLoader();
   });
 
