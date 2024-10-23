@@ -2,6 +2,8 @@ let pass = document.querySelector("#password");
 let confirmPass = document.querySelector("#confirmpass");
 let confirmPassSpan = document.querySelector(".confirmpassspan");
 let passSpan = document.querySelector(".passspan");
+let loaderOverlay = document.querySelector(".loader-overlay");
+let video = document.querySelector("#video");
 
 function validate() {
   if (pass.value !== confirmPass.value) {
@@ -16,28 +18,18 @@ function validate() {
     pass.setCustomValidity("");
   }
 }
+
 pass.addEventListener("input", validate);
 confirmPass.addEventListener("input", validate);
 
-document.addEventListener("DOMContentLoaded", function () {
-  let loaderOverlay = document.querySelector(".loader-overlay");
-  let video = document.querySelector("#video");
-  function fadeOutLoader() {
-    let fadeOutInterval = setInterval(function () {
-      if (loaderOverlay.style.opacity > 0) {
-        loaderOverlay.style.opacity -= 0.01;
-      } else {
-        clearInterval(fadeOutInterval);
-        loaderOverlay.style.display = "none";
-      }
-    }, 10);
-  }
+function fadeOutLoader() {
+  loaderOverlay.style.display = "none";
+}
 
-  video.addEventListener("play", function () {
-    fadeOutLoader();
-  });
-
-  setTimeout(function () {
-    fadeOutLoader();
-  }, 10000);
+video.addEventListener("playing", function () {
+  fadeOutLoader();
 });
+
+setTimeout(function () {
+  fadeOutLoader();
+}, 5000);
